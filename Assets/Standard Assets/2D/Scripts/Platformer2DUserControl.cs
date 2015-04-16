@@ -29,7 +29,7 @@ namespace UnityStandardAssets._2D
 
         private void FixedUpdate()
         {
-//            m_Character.Move(m_Jump);
+            m_Character.Move(m_Jump);
             m_Jump = false;
         }
     }
