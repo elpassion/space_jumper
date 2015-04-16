@@ -184,3 +184,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundTexture: {fileID: 2800000, guid: 620f97c9f42bb4bff8aaab1ccf9902c9, type: 3}
+  gameOverLabelXPosition: .200000003
+  gameOverLabelYPosition: .129999995
+  gameOverLabelWidth: .25
+  gameOverLabelHeight: .100000001
+  timeLabelXPosition: .200000003
+  timeLabelYPosition: .25
+  timeLabelWidth: .25
+  timeLabelHeight: .100000001
+  fontSize: 32
+  font: Fonts/comic

@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/MainMenu/MainMenu.unity
   - enabled: 1
     path: Assets/TimeMode/TimeMode.unity
+  - enabled: 1
+    path: Assets/GameOver/GameOver.unity
