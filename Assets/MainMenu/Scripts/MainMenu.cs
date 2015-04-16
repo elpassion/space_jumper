@@ -33,8 +33,7 @@ public class MainMenu : MonoBehaviour {
 		menuButtonStyle.normal.textColor = Color.white;
 
 		if (GUI.Button (new Rect(Screen.width * startButtonXPosition, Screen.height * startButtonYPosition, Screen.width * startButtonWidth, Screen.height * startButtonHeight), "Play", menuButtonStyle)) {
-			print ("Clicked Play button");
-			Application.LoadLevel ("level1");
+			Application.LoadLevel ("timemode");
 		}
 	}
 }
