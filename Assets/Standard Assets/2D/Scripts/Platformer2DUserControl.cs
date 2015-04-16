@@ -19,11 +19,11 @@ namespace UnityStandardAssets._2D
         private void Update()
         {
             if (!m_Jump) {
-				m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+				m_Jump = CrossPlatformInputManager.GetButtonDown("Fire1");
 			}
 
 			if (!m_SwtichGravity) {
-				m_SwtichGravity = CrossPlatformInputManager.GetButtonDown("Fire1");
+				m_SwtichGravity = CrossPlatformInputManager.GetButtonDown("Fire2");
 			}
         }
 
