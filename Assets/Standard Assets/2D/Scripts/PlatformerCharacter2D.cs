@@ -8,7 +8,6 @@ namespace UnityStandardAssets._2D
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
-        [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
@@ -32,36 +31,28 @@ namespace UnityStandardAssets._2D
 
         private void FixedUpdate()
         {
-			m_Rigidbody2D.AddForce(Physics2D.gravity);
-            m_Rigidbody2D.velocity = new Vector2(1*m_MaxSpeed, m_Rigidbody2D.velocity.y);
-            
-//            Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+			Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+			for (int i = 0; i < colliders.Length; i++)
+			{
+				if (colliders[i].gameObject != gameObject)
+					m_Grounded = true;
+			}
 
-
-            
+			Move(false);
         }
 
 
 
-//        public void Move(bool jump)
-//        {
-//            
-//            //only control the player if grounded or airControl is turned on
-//            if (m_Grounded || m_AirControl)
-//            {
-//                // The Speed animator parameter is set to the absolute value of the horizontal input.
-//                m_Anim.SetFloat("Speed", Mathf.Abs(move));
-//                // Move the character
-//                m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
-//            }
-//            // If the player should jump...
-//            if (m_Grounded && jump && m_Anim.GetBool("Ground"))
-//            {
-//                // Add a vertical force to the player.
-//                m_Grounded = false;
-//                m_Anim.SetBool("Ground", false);
-//                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-//            }
-//        }
+        public void Move(bool jump)
+        {
+			m_Rigidbody2D.AddForce(Physics2D.gravity);
+			m_Rigidbody2D.velocity = new Vector2(1*m_MaxSpeed, m_Rigidbody2D.velocity.y);
+			
+			if (m_Grounded && jump)
+			{
+				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+				m_Grounded = false;
+			}
+        }
     }
 }
