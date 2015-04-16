@@ -27,11 +27,14 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+			m_Rigidbody2D.gravityScale = 0;
+
         }
 
 
         private void FixedUpdate()
         {
+			m_Rigidbody2D.AddForce(Physics2D.gravity);
             m_Grounded = false;
 
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
