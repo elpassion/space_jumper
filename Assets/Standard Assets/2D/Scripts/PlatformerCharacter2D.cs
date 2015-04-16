@@ -37,37 +37,22 @@ namespace UnityStandardAssets._2D
 				if (colliders[i].gameObject != gameObject)
 					m_Grounded = true;
 			}
-			Debug.Log (m_Grounded);
-			m_Rigidbody2D.AddForce(Physics2D.gravity);
-            m_Rigidbody2D.velocity = new Vector2(1*m_MaxSpeed, m_Rigidbody2D.velocity.y);
-			if (m_Grounded)
-           	{
-	            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-                m_Grounded = false;
-            }
+
+			Move(false);
         }
 
 
 
-//        public void Move(bool jump)
-//        {
-//            
-//            //only control the player if grounded or airControl is turned on
-//            if (m_Grounde zd || m_AirControl)
-//            {
-//                // The Speed animator parameter is set to the absolute value of the horizontal input.
-//                m_Anim.SetFloat("Speed", Mathf.Abs(move));
-//                // Move the character
-//                m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
-//            }
-//            // If the player should jump...
-//            if (m_Grounded && jump && m_Anim.GetBool("Ground"))
-//            {
-//                // Add a vertical force to the player.
-//                m_Grounded = false;
-//                m_Anim.SetBool("Ground", false);
-//                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-//            }
-//        }
+        public void Move(bool jump)
+        {
+			m_Rigidbody2D.AddForce(Physics2D.gravity);
+			m_Rigidbody2D.velocity = new Vector2(1*m_MaxSpeed, m_Rigidbody2D.velocity.y);
+			
+			if (m_Grounded && jump)
+			{
+				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+				m_Grounded = false;
+			}
+        }
     }
 }
