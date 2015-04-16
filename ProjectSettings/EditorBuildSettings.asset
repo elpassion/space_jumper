@@ -7,7 +7,5 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/MainMenu/MainMenu.unity
-  - enabled: 0
-    path: Assets/TimeMode/level1.unity
   - enabled: 1
-    path: Assets/TimeMode/timemode.unity
+    path: Assets/TimeMode/TimeMode.unity
