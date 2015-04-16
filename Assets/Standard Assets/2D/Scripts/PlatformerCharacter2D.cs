@@ -10,6 +10,7 @@ namespace UnityStandardAssets._2D
         [SerializeField] private LayerMask m_WhatIsGround;
 
         private bool m_Grounded;
+		private float m_GravityDirection = 1.0f;
         private Rigidbody2D m_Rigidbody2D;
 		private Collider2D m_Collider;
 
@@ -23,17 +24,24 @@ namespace UnityStandardAssets._2D
         private void FixedUpdate()
         {
 			m_Grounded = m_Collider.IsTouchingLayers(m_WhatIsGround);
-			m_Rigidbody2D.AddForce(Physics2D.gravity);
+			m_Rigidbody2D.AddForce(m_GravityDirection * Physics2D.gravity);
 			m_Rigidbody2D.velocity = new Vector2(m_Speed, m_Rigidbody2D.velocity.y);
         }
 
         public void Jump()
         {
-			if (m_Grounded)
-			{
-				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			if (m_Grounded) {
+				m_Rigidbody2D.AddForce (new Vector2 (0f, m_GravityDirection * m_JumpForce));
 				m_Grounded = false;
 			}
         }
+
+		public void SwitchGravity()
+		{
+			if (m_Grounded) {
+				m_GravityDirection = m_GravityDirection * -1;
+				m_Grounded = false;
+			}
+		}
     }
 }

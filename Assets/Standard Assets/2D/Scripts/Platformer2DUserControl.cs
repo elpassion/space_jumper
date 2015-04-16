@@ -9,6 +9,7 @@ namespace UnityStandardAssets._2D
     {
         private PlatformerCharacter2D m_Character;
         private bool m_Jump;
+		private bool m_SwtichGravity;
 
         private void Awake()
         {
@@ -17,10 +18,13 @@ namespace UnityStandardAssets._2D
 
         private void Update()
         {
-            if (!m_Jump)
-            {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-            }
+            if (!m_Jump) {
+				m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+			}
+
+			if (!m_SwtichGravity) {
+				m_SwtichGravity = CrossPlatformInputManager.GetButtonDown("Fire1");
+			}
         }
 
         private void FixedUpdate()
@@ -28,7 +32,11 @@ namespace UnityStandardAssets._2D
 			if (m_Jump)
 				m_Character.Jump();
 
-            m_Jump = false;
+			if (m_SwtichGravity)
+				m_Character.SwitchGravity();
+
+			m_Jump = false;
+			m_SwtichGravity = false;
         }
     }
 }
