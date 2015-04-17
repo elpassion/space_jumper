@@ -13,7 +13,8 @@ public class TimeMode : MonoBehaviour {
 	}
 	
 	void Update () {
-		time += Time.deltaTime;
+		time += UnityEngine.Time.deltaTime;
 		txt.text = ((int) time).ToString();
+		PlayerPrefs.SetInt ("time", (int)time);
 	}
 }
