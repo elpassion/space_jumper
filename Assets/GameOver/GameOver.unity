@@ -185,7 +185,7 @@ RectTransform:
   m_GameObject: {fileID: 805490000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .909375012, y: .909375012, z: .909375012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2125318310}
   m_RootOrder: 2
@@ -369,14 +369,14 @@ RectTransform:
   m_GameObject: {fileID: 1350401048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .909375012, y: .909375012, z: .909375012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2125318310}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -230}
-  m_SizeDelta: {x: 602, y: 455}
+  m_AnchoredPosition: {x: 210, y: -230}
+  m_SizeDelta: {x: 382, y: 255}
   m_Pivot: {x: 0, y: .5}
 --- !u!114 &1350401050
 MonoBehaviour:
@@ -403,7 +403,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: .600000024
-  m_Text: 0
+  m_Text: 20
 --- !u!222 &1350401051
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -446,7 +446,7 @@ RectTransform:
   m_GameObject: {fileID: 1786466069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .909375012, y: .909375012, z: .909375012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2125318310}
   m_RootOrder: 3
@@ -567,14 +567,14 @@ RectTransform:
   m_GameObject: {fileID: 2105731965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .909375012, y: .909375012, z: .909375012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2125318310}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 41, y: -231}
-  m_SizeDelta: {x: 602, y: 455}
+  m_AnchoredPosition: {x: 211, y: -231}
+  m_SizeDelta: {x: 382, y: 255}
   m_Pivot: {x: 0, y: .5}
 --- !u!114 &2105731967
 MonoBehaviour:
