@@ -59,7 +59,7 @@ namespace UnityStandardAssets._2D
 					break;
 				case TouchPhase.Moved:
 					Vector2 currentSwipe = touch.position - touchStartingPosition;
-					if (currentSwipe.magnitude > 5f && m_isSwipe) {
+					if (currentSwipe.magnitude > 10f && m_isSwipe) {
 						m_SwtichGravity = true;
 						m_isSwipe = false;
 					}
