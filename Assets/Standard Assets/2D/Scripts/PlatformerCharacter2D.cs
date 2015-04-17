@@ -51,7 +51,7 @@ namespace UnityStandardAssets._2D
 		private float CalculateVelocityX()
 		{
 			if (m_Rigidbody2D.velocity.x >= m_Speed) {
-				return m_Rigidbody2D.velocity.x - 0.05f * (m_Rigidbody2D.velocity.x - m_Speed);
+				return m_Rigidbody2D.velocity.x - 0.03f * (m_Rigidbody2D.velocity.x - m_Speed);
 			}
 			else {
 				return m_Rigidbody2D.velocity.x + 0.1f * (m_Speed - m_Rigidbody2D.velocity.x);
