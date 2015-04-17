@@ -1222,8 +1222,8 @@ GameObject:
   - 92: {fileID: 523058221}
   - 124: {fileID: 523058220}
   - 81: {fileID: 523058219}
-  - 114: {fileID: 523058224}
   - 114: {fileID: 523058225}
+  - 114: {fileID: 523058226}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1297,22 +1297,6 @@ Transform:
   - {fileID: 905301806}
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!114 &523058224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 523058218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d8238cc53530b64fbb7828c3d3bb591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1646372313}
-  damping: 1
-  lookAheadFactor: 5
-  lookAheadReturnSpeed: .5
-  lookAheadMoveThreshold: .100000001
 --- !u!114 &523058225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,6 +1314,18 @@ MonoBehaviour:
   timeLabelHeight: .100000001
   fontSize: 32
   font: Fonts/comic
+--- !u!114 &523058226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 523058218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8238cc53530b64fbb7828c3d3bb591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1646372313}
 --- !u!1 &530687978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,8 +2092,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 905301805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -.140000001, z: 10}
-  m_LocalScale: {x: 1.29999995, y: 1, z: 1}
+  m_LocalPosition: {x: 1, y: -.170000002, z: 10}
+  m_LocalScale: {x: 1.29999995, y: .995185912, z: 1}
   m_Children: []
   m_Father: {fileID: 523058223}
   m_RootOrder: 0
