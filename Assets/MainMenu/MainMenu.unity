@@ -189,8 +189,6 @@ MonoBehaviour:
   startButtonYPosition: .71875
   startButtonWidth: .28828001
   startButtonHeight: .184029996
-  buttonFontSize: 32
-  buttonFont: Fonts/comic
 --- !u!1 &871849781
 GameObject:
   m_ObjectHideFlags: 0
