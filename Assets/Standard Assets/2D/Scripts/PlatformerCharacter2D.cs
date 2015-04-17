@@ -12,12 +12,19 @@ namespace UnityStandardAssets._2D
 
         private Rigidbody2D m_Rigidbody2D;
 		private Collider2D m_Collider;
+		private Transform m_Transform;
 
         private void Awake()
         {
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
 			m_Collider = GetComponent<Collider2D>();
+			m_Transform = GetComponent<Transform>();
         }
+
+		private void Update()
+		{
+			m_Transform.Rotate((new Vector3(0.0f, 0.0f, -20.0f * m_Speed * m_Rigidbody2D.gravityScale) * Time.deltaTime), Space.Self);
+		}
 
         private void FixedUpdate()
         {
