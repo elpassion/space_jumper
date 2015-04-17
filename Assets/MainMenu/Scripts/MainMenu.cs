@@ -7,7 +7,7 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 
-	public Texture backgroundTexture;
+	public Texture2D buttonTexture;
 
 	public float startButtonXPosition;
 	public float startButtonYPosition;
@@ -21,10 +21,11 @@ public class MainMenu : MonoBehaviour {
 
 	void OnGUI(){
 
-		// Display our Background Texture
-		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), backgroundTexture);
-
 		// Display our Buttons
+
+		GUI.skin.button.normal.background = (Texture2D) buttonTexture;
+		GUI.skin.button.hover.background = (Texture2D) buttonTexture;
+		GUI.skin.button.active.background = (Texture2D) buttonTexture;
 
 		GUIStyle menuButtonStyle = new GUIStyle(GUI.skin.button);
 
@@ -32,7 +33,7 @@ public class MainMenu : MonoBehaviour {
 		menuButtonStyle.font = (Font)Resources.Load(buttonFont, typeof(Font));
 		menuButtonStyle.normal.textColor = Color.white;
 
-		if (GUI.Button (new Rect(Screen.width * startButtonXPosition, Screen.height * startButtonYPosition, Screen.width * startButtonWidth, Screen.height * startButtonHeight), "Play", menuButtonStyle)) {
+		if (GUI.Button (new Rect(Screen.width * startButtonXPosition, Screen.height * startButtonYPosition, Screen.width * startButtonWidth, Screen.height * startButtonHeight), "", menuButtonStyle)) {
 			Application.LoadLevel ("timemode");
 		}
 	}
