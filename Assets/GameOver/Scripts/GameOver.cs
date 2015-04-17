@@ -8,8 +8,6 @@ using System.Collections;
 
 public class GameOver : MonoBehaviour {
 
-	public Texture backgroundTexture;
-
 	public float gameOverLabelXPosition;
 	public float gameOverLabelYPosition;
 	public float gameOverLabelWidth;
@@ -23,19 +21,38 @@ public class GameOver : MonoBehaviour {
 	public int fontSize;
 	public string font;
 
+	public Texture2D retryButtonTexture;
+	public float retryButtonXPosition;
+	public float retryButtonYPosition;
+	public float retryButtonWidth;
+	public float retryButtonHeight;
+
+	public Texture2D menuButtonTexture;
+	public float menuButtonXPosition;
+	public float menuButtonYPosition;
+	public float menuButtonWidth;
+	public float menuButtonHeight;
+
 	void OnGUI(){
 
-		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), backgroundTexture);
+		GUIStyle retryButtonStyle = new GUIStyle(GUI.skin.button);
+
+		retryButtonStyle.normal.background = (Texture2D) retryButtonTexture;
+		retryButtonStyle.hover.background = (Texture2D) retryButtonTexture;
+		retryButtonStyle.active.background = (Texture2D) retryButtonTexture;
+
+		if (GUI.Button (new Rect(Screen.width * retryButtonXPosition, Screen.height * retryButtonYPosition, Screen.width * retryButtonWidth, Screen.height * retryButtonHeight), "", retryButtonStyle)) {
+			Application.LoadLevel ("timemode");
+		}
+
+		GUIStyle menuButtonStyle = new GUIStyle(GUI.skin.button);
 		
-		GUIStyle labelStyle = new GUIStyle(GUI.skin.label);
+		menuButtonStyle.normal.background = (Texture2D) menuButtonTexture;
+		menuButtonStyle.hover.background = (Texture2D) menuButtonTexture;
+		menuButtonStyle.active.background = (Texture2D) menuButtonTexture;
 
-		labelStyle.fontSize = fontSize;
-		labelStyle.font = (Font)Resources.Load(font, typeof(Font));
-		labelStyle.normal.textColor = Color.white;
-
-		int time = PlayerPrefs.GetInt ("time");
-
-		GUI.Label (new Rect (Screen.width * gameOverLabelXPosition, Screen.height * gameOverLabelYPosition, Screen.width * gameOverLabelWidth, Screen.height * gameOverLabelHeight), "Game Over!", labelStyle);
-		GUI.Label (new Rect (Screen.width * timeLabelXPosition, Screen.height * timeLabelYPosition, Screen.width * timeLabelWidth, Screen.height * timeLabelHeight), String.Concat("Time: ", time, "s"), labelStyle);
-	}
+		if (GUI.Button (new Rect(Screen.width * menuButtonXPosition, Screen.height * menuButtonYPosition, Screen.width * menuButtonWidth, Screen.height * menuButtonHeight), "", menuButtonStyle)) {
+			Application.LoadLevel ("mainmenu");
+		}
+	}	
 }
