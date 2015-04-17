@@ -28,7 +28,12 @@ namespace UnityStandardAssets._2D
 
         private void FixedUpdate()
         {
-			UpdateVelocity();
+			if (PlayerPrefs.GetInt ("time") < 0) {
+				FreezePlayer();
+			} else {
+				UpdateVelocity();	
+			}
+
 			m_Grounded = m_Collider.IsTouchingLayers(m_WhatIsGround);
         }
 
@@ -61,6 +66,11 @@ namespace UnityStandardAssets._2D
 		private void UpdateVelocity()
 		{
 			m_Rigidbody2D.velocity = new Vector2(CalculateVelocityX(), m_Rigidbody2D.velocity.y);
+		}
+
+		private void FreezePlayer()
+		{
+			m_Rigidbody2D.velocity = new Vector2(0f, 0f);
 		}
     }
 }

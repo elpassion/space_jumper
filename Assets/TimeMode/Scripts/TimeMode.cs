@@ -7,7 +7,7 @@ public class TimeMode : MonoBehaviour {
 	private Text txt;
 
 	void Start () {
-		time = 0.0F;
+		time = -4.0F;
 		txt = gameObject.GetComponent<Text>(); 
 		txt.text = ((int) time).ToString();
 	}
