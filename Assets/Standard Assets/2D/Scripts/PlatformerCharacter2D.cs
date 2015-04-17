@@ -23,7 +23,7 @@ namespace UnityStandardAssets._2D
 
 		private void Update()
 		{
-			m_Transform.Rotate((new Vector3(0.0f, 0.0f, -50.0f * m_Speed) * Time.deltaTime), Space.Self);
+			m_Transform.Rotate((new Vector3(0.0f, 0.0f, -20.0f * m_Speed * m_Rigidbody2D.gravityScale) * Time.deltaTime), Space.Self);
 		}
 
         private void FixedUpdate()

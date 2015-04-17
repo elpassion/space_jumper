@@ -900,9 +900,9 @@ RectTransform:
   - {fileID: 265590968}
   m_Father: {fileID: 1204928847}
   m_RootOrder: 3
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 369.999878, y: 204.909393}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -268, y: -50}
   m_SizeDelta: {x: 500, y: 40}
   m_Pivot: {x: .5, y: .5}
 --- !u!4 &245002190 stripped
